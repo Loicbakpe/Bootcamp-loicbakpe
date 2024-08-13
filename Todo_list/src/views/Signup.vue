@@ -1,4 +1,23 @@
 <script setup>
+import { useAuthStore } from '@/stores/auth';
+import { ref } from 'vue';
+
+const authStore = useAuthStore()
+
+const user = ref({
+    name: '',
+    email: '',
+    password: '',
+})
+
+const confirmPassword = ''
+
+
+function register () {
+    authStore.register(user.value)
+    // console.log(localStorage.getItem('users'));
+    
+}
 
 </script>
 
@@ -7,19 +26,19 @@
 <body class="flex items-center justify-center h-screen">
     <div id="app" class="container bg-white p-8">
         <h2 class="text-3xl font-bold text-center mb-6">Sign Up</h2>
-        <form>
+        <form @submit.prevent="register">
             <div class="mb-4">
-                <input type="text" v-model="name"
+                <input type="text" v-model="user.name"
                        placeholder="Name"
                        class="form-input">
             </div>
             <div class="mb-4">
-                <input type="email" v-model="email" 
+                <input type="email" v-model="user.email" 
                        placeholder="Email" 
                        class="form-input">
             </div>
             <div class="mb-4">
-                <input type="password" v-model="password"
+                <input type="password" v-model="user.password"
                        placeholder="Password" 
                        class="form-input">
             </div>
@@ -29,7 +48,8 @@
                        placeholder="Confirm Password" 
                        class="form-input">
             </div>
-            <button @click.prevent="signUp"
+            <button
+            type="submit"
                 class="w-full bg-blue-500 hover:bg-blue-600 
                        text-white font-semibold py-2
                        rounded-md focus:outline-none">Sign
