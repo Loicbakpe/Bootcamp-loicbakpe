@@ -1,7 +1,7 @@
 <script setup>
 import { useAuthStore } from '@/stores/auth';
 import { ref } from 'vue';
-
+import router from '@/router';
 const authStore = useAuthStore()
 
 const user = ref({
@@ -15,6 +15,7 @@ const confirmPassword = ''
 
 function register () {
     authStore.register(user.value)
+    router.push({path: "/signin"})
     // console.log(localStorage.getItem('users'));
     
 }

@@ -10,7 +10,27 @@ export const useAuthStore = defineStore('auth', {
 
     actions: {
 
+        getUsers(){
+            if(localStorage.getItem("users")){
+                this.users = JSON.parse(localStorage.getItem("users"))
+                console.log(localStorage.getItem("users"))
+            } 
+        },
+        login(data){
+            const valide = this.users.findIndex(item => item.email === data.email)
+            console.log(valide)
+            console.log(this.users)
+            console.log(data.email)
+            if(valide && valide != -1){
+                console.log(valide)
+                if(data.password === this.users[valide].password){
+                    return true
+                }
 
+            }else{
+                return false
+            }
+        },
         async register(userData) {
             if(localStorage.getItem('users') == null) {
                 this.users.push(userData)
