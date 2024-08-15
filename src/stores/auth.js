@@ -21,15 +21,15 @@ export const useAuthStore = defineStore('auth', {
             console.log(valide)
             console.log(this.users)
             console.log(data.email)
-            // if(valide && valide != -1){
-            //     console.log(valide)
-            //     if(data.password === this.users[valide].password){
-            //         return true
-            //     }
+            if(valide && valide != -1){
+                console.log(valide)
+                if(data.password === this.users[valide].password){
+                    return true
+                }
 
-            // }else{
-            //     return false
-            // }
+            }else{
+                return false
+            }
         },
         async register(userData) {
             if(localStorage.getItem('users') == null) {
