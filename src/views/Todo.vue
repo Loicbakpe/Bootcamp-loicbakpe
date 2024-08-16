@@ -1,5 +1,5 @@
 <template>
-    <div class=" h-screen w-screen">
+    <div class=" h-screen w-screen bg red">
         <div class=" inline-block h-20 text-center w-full">
         <h1 class=" text-xl font-semibold text-center w-full ">My Todos Dashboard</h1>
     </div>

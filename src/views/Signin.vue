@@ -34,7 +34,10 @@
         </button>
       </form>
       <p class="mt-4 text-sm text-center text-gray-600">
-        Don't have an account? <a href="#" class="text-blue-500 hover:underline">Sign up here</a>
+        Don't have an account? 
+        <RouterLink to="/">
+        <div class="text-blue-500 hover:underline">Sign up here</div>
+        </RouterLink>
       </p>
     </div>
   </div>
