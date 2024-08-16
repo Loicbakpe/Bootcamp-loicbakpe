@@ -1,7 +1,7 @@
 <template>
-    <div class=" h-screen w-screen bg red">
+    <div class=" h-screen w-screen bg-purple-300">
         <div class=" inline-block h-20 text-center w-full">
-        <h1 class=" text-xl font-semibold text-center w-full ">My Todos Dashboard</h1>
+        <h1 class=" text-xl font-semibold text-center w-full ">My Todos List</h1>
     </div>
     <div class="flex flex-row justify-between mt-10 bg-gray-200 h-full">
         <div class=" w-full flex items-center  flex-col">
@@ -35,12 +35,12 @@
         </div>
             <h1>To do Form</h1>
             <form action="">
-                <div class="my-4 flex flex-col">
+                <div class="my-4 flex flex-col bg-purple-500">
                     <span>Titre</span>
 
                     <input v-model="data.title" type="text" class=" px-6 py-3 rounded w-96" required>
                 </div>
-                <div class="my-4 flex flex-col">
+                <div class="my-4 flex flex-col bg-purple-500">
                     <span>Description</span>
                     <textarea v-model="data.describe" class=" px-6 py-3 rounded w-96 h-32 rounded-lg" name="" id="" cols="30" rows="10" required></textarea>
                 </div>
@@ -75,11 +75,11 @@
                 
                 </fieldset>
 
-                <div class="my-4 flex flex-col">
+                <div class="my-4 flex flex-col bg-purple-500">
                     <span>Date debut</span>
                     <input v-model="data.dateS"  type="date" name="" id="" class=" px-6 py-3 rounded w-96" required>
                 </div>
-                <div class="my-4 flex flex-col">
+                <div class="my-4 flex flex-col bg-purple-500">
                     <span>Date fin</span>
                     <input v-model="data.dateE" type="date" name="" id="" class=" px-6 py-3 rounded w-96" required>
                 </div>
